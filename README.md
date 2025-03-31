@@ -2,5 +2,5 @@ Solving problems from "Алгоритмы: теория и практика. С�
 
 How to compile:
 ```shell
-    mkdir -p ./builddir && cd builddir/ && meson setup --wipe && meson compile --verbose && cd ../
+mkdir -p ./builddir && cd builddir/ && meson setup --wipe && meson compile --verbose && cd ../
 ```

@@ -11,9 +11,9 @@ add_project_arguments('-Wall', '-Werror', '-Wstrict-aliasing',
     '-Wno-variadic-macros', '-Wno-parentheses', '-fdiagnostics-show-option',
     language: 'cpp')
 
-executable('01', '01.cpp')
-executable('02', '02.cpp')
-executable('03', '03.cpp')
-executable('04', '04.cpp')
-executable('05', '05.cpp')
-executable('06', '06.cpp')
+executable('01', '01/01.cpp')
+executable('02', '02/02.cpp')
+executable('03', '03/03.cpp')
+executable('04', '04/04.cpp')
+executable('05', '05/05.cpp')
+executable('06', '06/06.cpp')
