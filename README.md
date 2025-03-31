@@ -4,3 +4,8 @@ How to compile:
 ```shell
 mkdir -p ./builddir && cd builddir/ && meson setup --wipe && meson compile --verbose && cd ../
 ```
+
+How to run tests (task 01 as example):
+```shell
+sh test_runner.sh ./builddir/01 ./01/tests
+```
