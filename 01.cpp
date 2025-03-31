@@ -5,8 +5,10 @@
 #include <unordered_map>
 
 struct bracket {
+    size_t pos;
     char b;
-    int pos;
+    char _pad[7];
+    bracket(size_t pos_, char b_): pos(pos_), b(b_) {}
 };
 
 int main() {
@@ -16,13 +18,13 @@ int main() {
     std::unordered_set<char> non_trivial = {'(', ')', '[', ']', '{', '}'};
     std::unordered_set<char> brackets_open = { '(', '[', '{' };
     std::unordered_map<char, char> brackets_rev = { {')', '('}, {']', '['}, {'}', '{'} };
-    for (int i = 0; i < input.size(); i++) {
+    for (size_t i = 0; i < input.size(); i++) {
         const char a = input[i];
         if (non_trivial.count(a) == 0) {
             continue;
         }
         if (brackets_open.count(a) != 0) {
-            stack.push({a, i + 1});
+            stack.push(bracket(i + 1, a));
         } else {
             if (stack.empty()) {
                 std::cout << i + 1 << std::endl;

@@ -5,10 +5,10 @@
 // std queue - push to back, pop from front
 
 int main() {
-    int buf_size, packets_num;
+    size_t buf_size, packets_num;
     std::cin >> buf_size >> packets_num;
     std::queue<int> queue;
-    for (int i = 0; i < packets_num; ++i) {
+    for (size_t i = 0; i < packets_num; ++i) {
         int arrival, duration;
         std::cin >> arrival >> duration;
         if (!queue.empty() && queue.front() <= arrival) {
