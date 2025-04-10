@@ -44,10 +44,7 @@ int main() {
         if (command == "del") {
             const auto s = readT<std::string>();
             auto& fl = data[hash(s, m)];
-            auto iter = std::find(fl.begin(), fl.end(), s);
-            if (iter != fl.end()) {
-                fl.remove(*iter);
-            }
+            fl.remove(s);
         }
         if (command == "find") {
             const auto s = readT<std::string>();
