@@ -14,7 +14,8 @@ void siftDown(std::vector<double>& v, size_t i) {
     // sift to smaller child
     while (true) {
         const size_t l_i = 2 * i + 1, r_i = 2 * i + 2;
-        int min, min_i;
+        double min;
+        size_t min_i;
         bool min_selected = false;
         if (l_i < sz) {
             min = v[l_i];

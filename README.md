@@ -2,7 +2,7 @@ Solving problems from "Алгоритмы: теория и практика. С�
 
 How to compile:
 ```shell
-mkdir -p ./builddir && cd builddir/ && meson setup --wipe && meson compile --verbose && cd ../
+mkdir -p ./builddir ; cd builddir/ ; env CXX=clang++ meson setup --wipe ; env CXX=clang++ meson compile --verbose ; cd ../
 ```
 
 How to run tests (task 01 as example):

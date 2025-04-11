@@ -61,13 +61,13 @@ void cout_optional_if_has_value(const std::optional<int>& opt) {
 }
 
 int main() {
-    int len;
+    size_t len;
     std::cin >> len;
     std::vector<int> data(len);
     for (size_t i = 0; i < data.size(); ++i) {
         std::cin >> data[i];
     }
-    int w_size;
+    size_t w_size;
     std::cin >> w_size;
     queue_with_max q_m(w_size);
     cout_optional_if_has_value(q_m.max());

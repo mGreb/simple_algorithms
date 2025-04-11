@@ -1,18 +1,7 @@
 project('simple_algorithms', 'cpp', version: '0.1',
-    default_options : ['cpp_std=c++23','warning_level=3', 'buildtype=debug'])
+    default_options : ['cpp_std=c++23','warning_level=3'])
 
-# add_project_arguments('-Wall', '-Werror', '-Wstrict-aliasing',
-#     '-pedantic', '-Wunreachable-code',
-#     '-Wcast-align', '-Wcast-qual', '-Wctor-dtor-privacy', '-Wdisabled-optimization',
-#     '-Wformat=2', '-Winit-self', '-Wlogical-op', '-Wmissing-include-dirs',
-#     '-Wnoexcept', '-Wold-style-cast', '-Woverloaded-virtual',
-#     '-Wredundant-decls', '-Wshadow', '-Wsign-promo', '-Wstrict-null-sentinel',
-#     '-Wstrict-overflow=5', '-Wswitch-default', '-Wundef', '-Wno-unused',
-#     '-Wno-variadic-macros', '-Wno-parentheses', '-fdiagnostics-show-option', '-fsanitize=integer',
-#     language: 'cpp')
-
-add_project_arguments('-Wall', '-Werror',
-    language: 'cpp')
+add_project_arguments('-Wall', '-Werror', '-Wpedantic', '-Wconversion', language: 'cpp')
 
     sanitizer_flags = [
   '-fsanitize=signed-integer-overflow',

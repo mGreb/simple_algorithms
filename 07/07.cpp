@@ -20,7 +20,7 @@ void siftDown(std::vector<ProcTime>& v, size_t i) {
     while (true) {
         const size_t l_i = 2 * i + 1, r_i = 2 * i + 2;
         ProcTime min;
-        int min_i;
+        size_t min_i;
         bool min_selected = false;
         if (l_i < sz) {
             min = v[l_i];

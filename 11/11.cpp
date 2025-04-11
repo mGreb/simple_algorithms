@@ -19,7 +19,7 @@ size_t hash(const std::string& s, size_t m) {
     size_t res = 0;
     size_t pow = 1;
     for (const auto c: s) {
-        res += c * pow;
+        res += (size_t)c * pow;
         res %= p;
         pow *= x;
         pow %= p;
