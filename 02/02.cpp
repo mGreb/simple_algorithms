@@ -11,14 +11,10 @@ int main() {
     int num_nodes = 0;
     std::cin >> num_nodes;
     std::unordered_map<int, std::vector<int>> children;
-    int root;  // keep track of root
     for (int node_num = 0; node_num < num_nodes; ++node_num) {
         int parent;
         std::cin >> parent;
         children[parent].push_back(node_num);
-        if (parent == -1) {
-            root = node_num;
-        }
     }
     std::unordered_map<int, int> depths = {{-1, 0}};
     int max_depth = 0;
