@@ -1,15 +1,30 @@
 project('simple_algorithms', 'cpp', version: '0.1',
-    default_options : ['cpp_std=c++23'])
+    default_options : ['cpp_std=c++23','warning_level=3', 'buildtype=debug'])
 
-add_project_arguments('-Wall', '-Werror', '-Wstrict-aliasing',
-    '-pedantic', '-fmax-errors=5', '-Wunreachable-code',
-    '-Wcast-align', '-Wcast-qual', '-Wctor-dtor-privacy', '-Wdisabled-optimization',
-    '-Wformat=2', '-Winit-self', '-Wlogical-op', '-Wmissing-include-dirs',
-    '-Wnoexcept', '-Wold-style-cast', '-Woverloaded-virtual',
-    '-Wredundant-decls', '-Wshadow', '-Wsign-promo', '-Wstrict-null-sentinel',
-    '-Wstrict-overflow=5', '-Wswitch-default', '-Wundef', '-Wno-unused',
-    '-Wno-variadic-macros', '-Wno-parentheses', '-fdiagnostics-show-option',
+# add_project_arguments('-Wall', '-Werror', '-Wstrict-aliasing',
+#     '-pedantic', '-Wunreachable-code',
+#     '-Wcast-align', '-Wcast-qual', '-Wctor-dtor-privacy', '-Wdisabled-optimization',
+#     '-Wformat=2', '-Winit-self', '-Wlogical-op', '-Wmissing-include-dirs',
+#     '-Wnoexcept', '-Wold-style-cast', '-Woverloaded-virtual',
+#     '-Wredundant-decls', '-Wshadow', '-Wsign-promo', '-Wstrict-null-sentinel',
+#     '-Wstrict-overflow=5', '-Wswitch-default', '-Wundef', '-Wno-unused',
+#     '-Wno-variadic-macros', '-Wno-parentheses', '-fdiagnostics-show-option', '-fsanitize=integer',
+#     language: 'cpp')
+
+add_project_arguments('-Wall', '-Werror',
     language: 'cpp')
+
+    sanitizer_flags = [
+  '-fsanitize=signed-integer-overflow',
+  '-fsanitize=unsigned-integer-overflow',
+  '-fsanitize=integer',
+  '-fno-sanitize-recover=all',
+  '-fsanitize=undefined',
+  '-fno-omit-frame-pointer'
+]
+
+add_project_arguments(sanitizer_flags, language: 'cpp')
+add_project_link_arguments(sanitizer_flags, language: 'cpp')
 
 executable('01', '01/01.cpp')
 executable('02', '02/02.cpp')
@@ -22,3 +37,4 @@ executable('08', '08/08.cpp')
 executable('09', '09/09.cpp')
 executable('10', '10/10.cpp')
 executable('11', '11/11.cpp')
+executable('12', '12/12.cpp')
